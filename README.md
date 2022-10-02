@@ -179,6 +179,44 @@ public class WhoIsTheHero {
         hero.heroOrNot();
     }}
 ---------------------------------------------------------------------------------------------------------- 
+Looping Statements
+
+*When we have to perform certain operations respetedly.
+1,For loop
+2,While loop
+3,Do while
+*Loops are used to repeat a block of code.
+
+public class Imposition {
+    /* You: I'm not Sure! May be this programing is not for Me!
+    *  You Traniner: what you saying ?You are doing great!
+    * YOu: No!! I don't Belive! Ok.write an Imposition.
+    * "I can program ! I can learn" - 25 times"*/
+
+    public static void main(String[] args) {
+        //for loop initialization; Condition; increment/decrement
+       /* for(int times=0;times<25;times++){
+            System.out.println("I can program ! I can learn");
+        }*/
+        //while loop like as for same concept
+     /*   int times=0;
+
+        while (times<25){
+            System.out.println("I can program ! I can learn");
+            times++;
+        }*/
+        int times = 0;
+        do{
+        System.out.println("I can program ! I can learn");
+            times++;
+        }while (times<25);
+       }
+   }
+//while and do while differentiation? while loops is entry control loops and do while loops  exit control loop.
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
 
  
     
