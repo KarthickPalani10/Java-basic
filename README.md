@@ -115,7 +115,70 @@ public class parentClass {
         ChildClass childClass = new ChildClass();
     }}
    --------------------------------------------------------------------------------------------------
-   
+conditional statement
+1,If Condition
+*The statement gets excuted only when the given condition is true.If the condition is false then the statement inside if 
+statements body are completely ignored.
+-------------------------------------------------------------------------------------------------------
+2,If else condition
+public  class LetsHaveACoffe {
+    //boolean is data type YES OR NO
+    boolean isCupEmpty = false;//change the vale is false print else statement
+
+    public static void main(String[] args) {
+        LetsHaveACoffe coffe = new LetsHaveACoffe();
+        if(coffe.isCupEmpty){
+            System.out.println("Fill the cup");
+        }
+        else{
+            System.out.println("Drink the coffee");
+        }
+    }}
+----------------------------------------------------------------------------------------------------------------
+3,If else-if-if
+public class WhoIsTheHero {
+    String myHeroName = "Super man";//Super Man print--> Sorry i can't guess we will use
+    public void superHeroGuesser(){
+        if(myHeroName.equals("iron man")){
+            System.out.println("Your thought about Iron man");
+        }else if(myHeroName.equals("Super man")){//equalsIgnorcase/ Super MAN the will print super man
+            System.out.println("Your thought about Super man");
+        } else if (myHeroName.equals("Thor")){
+            System.out.println("Your thought about Thor");
+        }else {
+            System.out.println("Sorry i can't guess");
+        }
+    }
+    public static void main(String[] args) {
+        WhoIsTheHero hero = new WhoIsTheHero();
+        hero.superHeroGuesser();
+    }}
+    -------------------------------------------------------------------------------------------
+ 4,Switch case
+ 
+ public class SuperHeroOrNot {
+    //Switch case we will use the multiple condition
+    String hero = "Iron man";
+    public void heroOrNot(){
+        switch (hero){
+            case "Iron man":
+                System.out.println("Iron man is a super hero");
+                break;
+            case "bat man":
+                System.out.println("bat man is a super hero");
+                break;
+            case "super man":
+                System.out.println("super man is a super hero");
+                break;
+            default:
+                System.out.println(hero + "Sorry I don't know this person");
+        }
+    }
+    public static void main(String[] args) {
+        SuperHeroOrNot hero = new SuperHeroOrNot();
+        hero.heroOrNot();
+    }}
+---------------------------------------------------------------------------------------------------------- 
 
  
     
