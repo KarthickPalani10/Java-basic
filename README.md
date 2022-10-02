@@ -7,7 +7,7 @@ public class HelloWolrd {
     }
 }
 --------------------------------------------------------------------------------
-//Data type , function,wrapper classes nothing but Integer,Long,Float
+//Data type , function,wrapper classes nothing but Integer,Long,Float,
 
 public class BankAccount {
     Long     accountNumber   = 123456789l;
@@ -300,156 +300,72 @@ protected         -    Y     -     Y      -    Y    -     N
 no access modifer -    Y     -     Y      -    N    -     N
 private           -    Y     -     N      -    N    -     N
 --------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Polymorphism(Is the capability of a method(fun) to do different thing based on the object that it is acting upon.) 
+Type of Polymorphism Two 
+1,Static /compile /early binding / (Overloading) (Method name should be same!!!)
+
+public class TheWayWeTake {
+    // we can create Parent class,Partner class,Boss class.
+    // *This class is to illustration method overloading with a practical example.
+    // it's called as method overloading. method name should be same. Must imp
+    public void take(Parents styleOfTaking){
+        System.out.println("Polite , Respectable ??");
+    }
+    public void take(Partner styleOfTaking){
+        System.out.println("love, Romantic, Mixture of everything!!");
+    }
+    public  void take(Boss StyleOfTaking){
+        System.out.println("Nothing personal");
+    }
+    public static void main(String[] args) {
+        TheWayWeTake take = new TheWayWeTake();
+        Parents parents = new Parents();
+        take.take(parents);
+        Partner partner = new Partner();
+        take.take(partner);
+        Boss boss = new Boss();
+        take.take(boss);
+}
+}
+
+Just create a class That why is upper code is working
+public class Partner {
+    // *This class is to illustration method overloading with a practical example
+}
+public class Parents {
+    /*This class is to illustration method overloading with a practical example.Also it acts as the demostrate
+    Overriding */
+public class Boss {
+    // *This class is to illustration method overloading with a practical example
+}    
+--------------------------------------------------------------------------------------------------------------
+2,Dynamic /Runtime /late binding (@Override)
+
+public class Parents {
+    /*This class is to illustration method overloading with a practical example.Also it acts as the demostrate
+    Overriding */
+    public void properties(){
+        System.out.println("Son!! use my property");
+    }
+    public void marriage(){
+        System.out.println("Son !! Marry your Uncle's doughter");
+    }
+}
+public class Son extends Parents{
+    //This Class is to illustrate method overriding with a practical Example...
+    // When child class not satisfying with the implementation of parent class @Override come in child class.
+@Override
+public void marriage(){
+    System.out.println("My Marriage MY Rule....");
+}
+    public static void main(String[] args) {
+        Parents parents = new Son();// syntax: parentClass ref = new childClass
+        parents.properties();
+        parents.marriage();
+
+    }
+}
+--------------------------------------------------------------------------------------------------------------
 
 
 
