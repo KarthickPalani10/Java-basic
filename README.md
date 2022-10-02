@@ -264,10 +264,42 @@ public class StaticVariable {
         System.out.println("object integer " +object2.depositeBy);
         System.out.println("object integer " +object3.accountBalance);
         System.out.println("object integer " +object3.depositeBy);
+    }}
+--------------------------------------------------------------------------------------------------------------------------------
+Inheritance (Access Modifier) Meaning reusability of code use parent and child.
+
+public class Car {
+    //Process of acquiring the properties(data +methods) we can use multiple class and data and method
+
+    public int wheels=4;//default int wheels, Private int wheels,
+    public void engine(){
+        System.out.println("This my engine secret");
+    }
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.engine();
     }
 }
-
---------------------------------------------------------------------------------------------------------------------------------
+public class BMW extends Car{
+    public static void main(String[] args) {
+        BMW bmw = new BMW();
+        bmw.engine();
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+Access Modifiers:
+* default - When No acess modifier is specified. EX code :int wheels
+* Private - only within the class in which they are declared. EX code:private int wheels
+* Protected - with same package/sub Class in difference package.EX code:protected int wheels
+* Public - from everywhere in the program. EX code:Public int wheels
+ */
+ 
+Access modifiers-Same class-Same package-Sub/class-Other class
+Public            -    Y     -     Y      -    Y    -     Y
+protected         -    Y     -     Y      -    Y    -     N
+no access modifer -    Y     -     Y      -    N    -     N
+private           -    Y     -     N      -    N    -     N
+--------------------------------------------------------------------------------------------------------------
 
 
 
