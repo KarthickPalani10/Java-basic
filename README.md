@@ -408,7 +408,69 @@ public class Benz extends Car{
     }
 }
 --------------------------------------------------------------------------------------------------------------------
+Interface (Like class but is not a class)
 
+public interface EmloyeeRule {
+
+    int salary = 25000;//By default, these variables are final and abstract
+    int leaves =10;
+
+    public void maintainHour();//By default , they are abstract
+    public void relocate();
+    public void report();
+    public void dress();
+}
+
+public interface FamilyRules {
+    public void takeCareParents();
+    public void helpMembers();
+    public void eatTogether();
+    public void enjoy();
+}
+public class ABCEmployeeRule implements EmloyeeRule,FamilyRules{
+    public void maintainHour(){
+        System.out.println("One day working Hr 8hr");
+    }
+    public void relocate(){
+        System.out.println("chennai");
+    }
+    public void report(){
+        System.out.println("manager");
+    }
+    public void dress(){
+        System.out.println("formal");
+    }
+    public void takeCareParents(){
+        System.out.println("I love my parents");
+    }
+    public void helpMembers(){
+        System.out.println("I help my mom");
+    }
+    public void eatTogether(){
+        System.out.println("we are eating together");
+    }
+    public void enjoy(){
+        System.out.println("We are enjoying lots");
+    }
+    public static void main(String[] args) {
+        ABCEmployeeRule abc = new  ABCEmployeeRule();
+        FamilyRules father = new ABCEmployeeRule();//Dynamic Binding
+        abc.maintainHour();
+        abc.relocate();
+        abc.report();
+        abc.dress();
+        father.eatTogether();
+        father.enjoy();
+        father.helpMembers();
+        father.takeCareParents();
+        System.out.println(EmloyeeRule.salary);
+        System.out.println(EmloyeeRule.leaves);
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+Encapsulation
+
+* Process of binding data and methods together into a Single unit.
 
 
 
