@@ -366,6 +366,50 @@ public void marriage(){
     }
 }
 --------------------------------------------------------------------------------------------------------------
+Abtraction (Hiding the implementation detail)
+
+public abstract class Car{
+
+    public abstract void engineSecret();
+    public abstract void companyVault();
+
+    public void employee(){
+        System.out.println("Employee");
+    }
+}
+public class Bmw extends Car{
+    @Override
+    public void engineSecret(){
+        System.out.println("BMW Engine Secret");
+    }
+    @Override
+    public void companyVault(){
+        System.out.println("BMW company vault");
+    }
+    public static void main(String[] args) {
+        Car car = new Bmw();
+        car.engineSecret();
+        car.companyVault();
+    }
+}
+public class Benz extends Car{
+    @Override
+    public void engineSecret() {
+        System.out.println("Benz Engine Secret");
+    }
+    @Override
+    public void companyVault() {
+        System.out.println("Benz Company Vault ");}
+    public static void main(String[] args) {
+        Car car = new Benz();
+        car.engineSecret();
+        car.companyVault();
+
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+
+
 
 
 
