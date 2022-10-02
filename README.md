@@ -214,21 +214,60 @@ public class Imposition {
    }
 //while and do while differentiation? while loops is entry control loops and do while loops  exit control loop.
 -------------------------------------------------------------------------------------------------------------------------
+Static Keyword Concept
+1,StaticMethods
+public class StaticMethods {
+    // Create a static method and call it without object.
+    public static void method1(){
+        System.out.println("Static method");
+    }
+    //we can call Static method from non static method but not otherwise.
+    public  void nonStatic(){
+        System.out.println("Non Static method");//StaticMethods name = new StaticMethods();name.method2();call this
+    }
+    public static void main(String[] args) {
+        method1();
+--------------------------------------------------------------------------------------------------------------------------------
+2,Static Block
+public class StaticBlock {
+    // when u create the static {} first static will execution in order.order by order execution.
+    static {
+        System.out.println("Inside static block1");
+    }
+    //priority first static and main method it's logic......
+    static {
+        System.out.println("Inside static block2");
+    }
+    public static void main(String[] args) {
+            System.out.println("Inside main method");
+        }}
+    --------------------------------------------------------------------------------------------------------------------------------
+3,StaticVariable
+public class StaticVariable {
+    //Example to show,Static variable are share among objects.
+    static int accountBalance = 0;
+    String depositeBy;
 
+    public static void main(String[] args) {
+        StaticVariable object1 = new StaticVariable();
+        object1.accountBalance=1000;
+        object1.depositeBy="karthick";
+        StaticVariable object2 = new StaticVariable();
+        object2.accountBalance=3000;
+        object2.depositeBy="kumaravel";
+        StaticVariable object3 = new StaticVariable();
+        object3.accountBalance=4000;
+        object3.depositeBy="Mani";
+        System.out.println("object integer " +object1.accountBalance);
+        System.out.println("object integer " +object1.depositeBy);
+        System.out.println("object integer " +object2.accountBalance);
+        System.out.println("object integer " +object2.depositeBy);
+        System.out.println("object integer " +object3.accountBalance);
+        System.out.println("object integer " +object3.depositeBy);
+    }
+}
 
-
-
- 
-    
-
-
-    
-
-
-
-
-
-
+--------------------------------------------------------------------------------------------------------------------------------
 
 
 
