@@ -471,6 +471,119 @@ public class ABCEmployeeRule implements EmloyeeRule,FamilyRules{
 Encapsulation
 
 * Process of binding data and methods together into a Single unit.
+--------------------------------------------------------------------------------------------------------------------
+String,StringBuffer,StringBuilder
+1,String Example
+public class StringExample {
+    public static void main(String[] args) {
+        String name = "Agniprasath";
+        int number = 3;
+        //returns character value for the particular index
+        System.out.println(name.charAt(1));
+        //returns the string length
+        System.out.println(name.length());
+        //check the equality of string with the given object.
+        System.out.println(name.equals("Arun"));
+        //check the equality of string e=with the given string obj without case sensitivity.
+        System.out.println(name.equalsIgnoreCase("AGANIPRASATH"));
+        //Check if string is empty or not only answer true or false.
+        System.out.println(name.isEmpty());
+        //returns True or false based on the given value is present or not.
+        System.out.println(name.contains("a"));
+        //Take a particular portion of the string. imp being print pannum.
+        System.out.println(name.substring(1));
+        //Take a particular portion of the string being and end index. imp end print pannathu.ex tha code 3
+        System.out.println(name.substring(1,3));
+        //appends the String to the given char.imp name sekurathu.
+        System.out.println(name.concat(" Arulprasath"));
+        //replaces the existing char with give char. imp namku theva illatha name eduthu chage pannikalam.
+        System.out.println(name.replace("A","a"));
+        System.out.println(name.replace("Agni","riya"));
+        //Find the position of char in string. A enna ijntex num nu print pannum.
+        System.out.println(name.indexOf("A"));
+        //Find the chat specified from the index position.
+        System.out.println(name.indexOf("a",7));
+        System.out.println(name.indexOf("sath",1));
+        //Trim will remove the white spaces before and after.imp munadi pinadi iruka space remove pannum nadula irutha la remove pannathu
+        System.out.println(name.trim());
+        //convert the given data type to String.
+        System.out.println(String.valueOf(number));
+        //UpperCase and lowerCase.
+        String upperCase = "RIYYAPARASNTH";
+        System.out.println(upperCase.toLowerCase());
+        String lowerCase = "agniprasath";
+        System.out.println(lowerCase.toUpperCase());
+        //Returns a joined String with Given delimiter
+        System.out.println(String.join("-","learning","Automation","online"));
+        System.out.println(String.join("/","30","05","1999"));
+        //Split
+        String splitThis="Am,I,teaching,Good?";
+        String [] splittedWorlds = splitThis.split(",");
+        for(String string: splittedWorlds){
+            System.out.println(string);
+        }}}
+--------------------------------------------------------------------------------------------------------------------
+2,StringBuffer Examples
+public class StringBufferExamples {
+    public static void main(String[] args) {
+        System.out.println("String is Immutable");
+        String name = "Arya";
+        System.out.println("Appending name is Original :" + name.concat("prasath"));
+        System.out.println("Original Name :"+name);
+        System.out.println("******************************");
+        System.out.println("String is mutable");
+        StringBuffer name1 = new StringBuffer("Arya");
+        System.out.println("Appending name is Original : " + name1.append("prasath"));
+        //StringBuffer method
+        //Reverse. imp string is don't have string Reverse method StringBuffer only reverse method.
+        StringBuffer replaceThis = new StringBuffer("Arul");
+        System.out.println(replaceThis.replace(0,3,"karthick"));
+        //delete
+        StringBuffer delete = new StringBuffer("xyzArul");
+        System.out.println(delete.delete(0,3));
+        //Insert
+        StringBuffer insert = new StringBuffer("Moni");
+        System.out.println(insert.insert(4,"sha"));
+        //Capacity
+        System.out.println(insert.capacity());
+        //Like String we have charAt,Substring,length method as well
+        StringBuffer uc = new StringBuffer("Moni");
+        System.out.println(uc.charAt(0));//charAt
+        System.out.println(uc.length());//length
+        System.out.println(uc.substring(1,3));//Substring
+}}
+--------------------------------------------------------------------------------------------------------------------
+3,StringBuilder Examples
+public class StringBuilderExamples {
+    public static void main(String[] args) {
+        System.out.println("String is Immutable");
+        String name = "Arya";
+        System.out.println("Appending name is Original :" + name.concat("prasath"));
+        System.out.println("Original Name :"+name);
+        System.out.println("******************************");
+        System.out.println("String is mutable");
+        StringBuilder name1 = new StringBuilder("Arya");
+        System.out.println("Appending name is Original : " + name1.append("prasath"));
+        //StringBuilder method
+        //Reverse. imp string is don't have string Reverse method StringBuffer only reverse method.
+        StringBuilder replaceThis = new StringBuilder("Arul");
+        System.out.println(replaceThis.replace(0,3,"karthick"));
+        //delete
+        StringBuilder delete = new StringBuilder("xyzArul");
+        System.out.println(delete.delete(0,3));
+        //Insert
+        StringBuilder insert = new StringBuilder("Moni");
+        System.out.println(insert.insert(4,"sha"));
+        //Capacity
+        System.out.println(insert.capacity());
+        //Like String we have charAt,Substring,length method as well
+        StringBuilder uc = new StringBuilder("Moni");
+        System.out.println(uc.charAt(0));//charAt
+        System.out.println(uc.length());//length
+        System.out.println(uc.substring(1,3));//Substring
+    }}
+    --------------------------------------------------------------------------------------------------------------------
+    
 
 
 
