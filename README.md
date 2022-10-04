@@ -586,9 +586,9 @@ public class StringBuilderExamples {
   Exception handling.
    * Exception is an undesirable or unexcepected event,which occures during the execution of a program i.e at runtime that disrupts the normal flow of the program's
      instractions.It can be handled by our program.
-  Exception
-   *Impossible to recover from error,Error are of Unchecked Type,happen at Run-time,Cause by the environment on which application is running.
   Error.
+   *Impossible to recover from error,Error are of Unchecked Type,happen at Run-time,Cause by the environment on which application is running.
+  Exception.
    * Possible to recover from exception,It can be of checked or unchecked.Can happen at compile time & Runtime,Caused by application.
   
   Object ->Throwable ->Exception ->Error
@@ -612,7 +612,7 @@ public class CheckedException {
        System.out.println(name.length());// Error is NullPointerException.
     }
 }
-//try block aprm katipa catch block the irukannum..
+//try block aprm katipa catch block the irukannum.
 -------------------------------------------------------------------------------------------------------------------------
 
 
