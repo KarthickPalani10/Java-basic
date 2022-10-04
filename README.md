@@ -583,7 +583,186 @@ public class StringBuilderExamples {
         System.out.println(uc.substring(1,3));//Substring
     }}
     --------------------------------------------------------------------------------------------------------------------
+  Exception handling.
+   * Exception is an undesirable or unexcepected event,which occures during the execution of a program i.e at runtime that disrupts the normal flow of the program's
+     instractions.It can be handled by our program.
+  Exception
+   *Impossible to recover from error,Error are of Unchecked Type,happen at Run-time,Cause by the environment on which application is running.
+  Error.
+   * Possible to recover from exception,It can be of checked or unchecked.Can happen at compile time & Runtime,Caused by application.
+  
+  Object ->Throwable ->Exception ->Error
+  Exception Two Types.
+Checked Exception
+ * Exception whicjh are indicatred during the compile time are know as checked exception or compile time Exception.
+UnCheckedException  
+ * Exception which will happen during the execution of the program are Unchecked or run time Exception.
+ -----------------------------------------------------------------------------------------------------------------------
+public class CheckedException {
+//It is called checked exception. all are compile
+    String name;
+  public static void main(String[] args) {
+    System.out.println(name);
+ }}
+ -----------------------------------------------------------------------------------------------------------------------
+ public class UncheckedException {
+ static String name;
+ // It is called unchecked exception.
+   public static void main(String[] args) {
+       System.out.println(name.length());// Error is NullPointerException.
+    }
+}
+//try block aprm katipa catch block the irukannum..
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
