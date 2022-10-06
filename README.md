@@ -833,19 +833,501 @@ public class TryCatchFinaly {
         }finally {
             System.out.println("Inside finally block");
         }}
--------------------------------------------------------------------------------------------------------------------------    
+-------------------------------------------------------------------------------------------------------------------------------
+Java Collection framwork:
+  * interable -> iterator -> iterator<e> -> collection.
+ List:
+   * ArrayList
+   * LinkedList
+   * Stack(lagacy class)
+   * Vector(lagacy class)
+    
+ Set:
+   * Hashset
+   * Linkedhashset
+   * Treeset
+    
+It is not a true collection.
+    
+Map:
+   * HashMap
+   * HashLinkedMap
+   * HashTable
+   * TreeMap
+--------------------------------------------------------------------------------------------------------------------------------
+  (1)  List:
+ 1,   ArrayList.
+    
+      public class ArrayListExample<S> {
+    /**
+     * List(I) is the Child of Collection(I).
+     * ArrayList (C) is one of the classes provides implementation for the List(I).
+     * In list duplicate values are allowed and the insertion order is maintained.
+     * The underlying DS is resizeable Array or Growable Array. We can insert Heterogeneous objects as well.
+     * NOTE: All the collections can store Heterogeneous objects can be stored except TREE SET and TREE MAP.
+     * ArrayList and vector implements RandomAccess, Serializable and Cloneable Interfaces
+     * Synchronized-> No
+     * Thread safe-> NO
+     * Default capacity-10
+     * <p>
+     * Fill Ratio or Load factor:1 or 100%
+     * Growth Rate: current_size + current_size/2
+     */
+    public void arrayListExamle() {
+     /*    List<Integer> arrayList = new ArrayList<Integer>();
+        arrayList.add(5);
+        arrayList.add(4);
+        arrayList.add(3);
+        arrayList.add(2);
+        arrayList.add(1);
+        ListIterator<Integer> iterator = arrayList.listIterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        System.out.println("**************************");
+        while (iterator.hasPrevious()){
+            System.out.println(iterator.previous());
+        }*/
+        List<String> arrayList = new ArrayList<String>();
+        arrayList.add("Bugatti");
+        arrayList.add("Benz");
+        arrayList.add("BMW");
+        arrayList.add("Bugatti");
+        arrayList.add("Bentley");
+        System.out.println(arrayList);
+        System.out.println(arrayList.get(1));//get enrathu index num kadupidikala
+        System.out.println(arrayList.indexOf("kart"));//indexOf la illa peru kudutha -1 nu print akum
+        System.out.println(arrayList.indexOf("Bugatti"));//indexOf use panna first atha name enga varutho atha index kudukum
+        System.out.println(arrayList.lastIndexOf("Bugatti"));//lastIndexOf use last la iruthu etha index la varuthu nu chk pannum
+        System.out.println(arrayList);
+        List<String> anotherList = new ArrayList<String>();//duplication
+        anotherList.addAll(arrayList);
+        anotherList.clear();//Clear use panna ellathaium clear pannalam
+        System.out.println(anotherList);
+        arrayList.remove(0);//index num remove pannna la
+        System.out.println(arrayList);//
+        arrayList.remove("Bugatti");//String name remove pannalam
+        System.out.println(arrayList);
+        arrayList.add(null);//array list la null enra element add panna mudium.
+        System.out.println(arrayList);
+        arrayList.set(0, "karthi");// set using the change the char and any thing
+        System.out.println(arrayList);
+        System.out.println(arrayList.isEmpty());// ArrayList is value iruka illlaiya nu kekurathu true or false
+        System.out.println(arrayList.size());
+        //iterate
+        System.out.println("*for each loop*");
+        for (String string : arrayList) {
+            System.out.println(string);
+        }
+        System.out.println("*for each loop*");
+        for (int i = 0; i < arrayList.size(); i++) {//.aprm size use pannanum
+            System.out.println(arrayList.get(i));//.aprm get use pannanum
+        }
+        System.out.println("--------------------------------------");
+        //ListIterator frd direction and reverse direction two things are possible.
+        ListIterator<String> iterator = arrayList.listIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println("-------------------------------------------");
 
+        while (iterator.hasPrevious()) {
+            System.out.println(iterator.previous());
+        }
+        System.out.println("-----------------------------------------");
+        //iterator only frwd direction only possible
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
 
+    public static void main(String[] args) {
+        ArrayListExample example = new ArrayListExample();
+        example.arrayListExamle();
+    }}
+--------------------------------------------------------------------------------------------------------------------------------
+ 2,   LinkedList.
+    
+    import java.util.Iterator;
+    import java.util.LinkedList;
 
+public class LinkedListExample {
+            /**
+             * LinkedList is implemented using Doubly linked list. This is best suited for insertion and deletion operations.
+             * Unlike ArrayList, this is not the best for retrieving the data.
+             * All the collections implements Serializable and cloneable Interfaces.
+             * LinkedList also implements those Interfaces but not RandomAccess Interface.
+             */
+            public void linkedListOperationsExample() {
+        //Create a simple Linked list
+                LinkedList<Integer> linkedList = new LinkedList<Integer>();
+                linkedList.add(2);
+                linkedList.add(3);
+                linkedList.add(4);
+                System.out.println("Linked List :"+ linkedList);
+                //Add an element to the first position
+                linkedList.addFirst(1);// mutha oru num add panna
+                System.out.println("Linked List after adding first:"+ linkedList);
+                //Add an element at last
+                linkedList.addLast(5);//last la oru num add panna
+                System.out.println("Linked List after adding last:"+ linkedList);
+                /*
+                 * LinkedList performs the worst if the operation is retrieval of data.
+                 * Hence if our requirement is to fetch data, we should use ArrayList.
+                 * But LinkedList is the best choice if we have requirements of adding and
+                 * removing data very often. In this case we should avoid ArrayList
+                 */
+                //Get the first value
+                System.out.println("First Value :" +linkedList.getFirst());//o index print pannum
+    
+                //Get the first value using index position
+                System.out.println("First Value using index :"+linkedList.get(0));// what is index num you give print it.
+    
+                /*
+                 * Now get the third value of the list.
+                 * Since LinkedList has the data structure of doubly linked list,
+                 * the value of the third index is known only to the link present in
+                 * the Second index. Internally, the program will traverse to index number 2 and then only
+                 * it can get the value of 3. So Linked list is not suited for search operations.
+                 */
+                System.out.println("Third value of the list : "+ linkedList.get(3));//for ex you 3 index num print it 4
+                //update the values using set().
+                //Integer newFirst=linkedList.get(0);
+                //linkedList.set(0, newFirst);
+                //System.err.println("After 0th position updated :"+linkedList);
+    
+                //removeFirst and removeLast
+                System.out.println("Remove first :"+linkedList.removeFirst());
+                System.out.println(linkedList);
+                System.out.println("Remove last :"+linkedList.removeLast());
+                System.out.println(linkedList);
+                //poll method  and pollfirst() deletes the first element in the list
+                System.out.println(linkedList.poll());
+                System.out.println(linkedList);
+                //pollLast deletes the last
+                linkedList.pollLast();
+                System.out.println(linkedList);
+                //Adding
+                linkedList.addFirst(1);
+                linkedList.add(2);
+                linkedList.add(3);
+                linkedList.add(4);
+                linkedList.add(5);
+                linkedList.add(6);
+                //removeFirstOccurence
+                linkedList.removeFirstOccurrence(2);
+                System.out.println("After removing the first occurence of 2 "+ linkedList );
+                //removeLastOccurrence
+                linkedList.removeLastOccurrence(6);
+                System.out.println("After removing the last occurence of 6 "+ linkedList );
+                System.out.println("-----------------------------------------------------");
+            }/*
+             * Iteration of Linked List with simple for loop
+             */
+            public void iterateLinkedListWithSimpleFor() {
+    
+                LinkedList<String> linkedList = new LinkedList<String>();
+                linkedList.add("a");
+                linkedList.add("b");
+                linkedList.add("c");
+                linkedList.add("d");
+                System.out.println("Simple For loop");
+                for (int index = 0; index < linkedList.size(); index++) {
+                    System.out.println("Elements in the LL are " + linkedList.get(index));
+    
+                }
+            }/*
+             * Iteration of Linked List with Advanced For loop (For each)
+             */
+    
+            public void iterationWithAdvancedFor(){
+                LinkedList< String> linkedList= new LinkedList<String>();
+                linkedList.add("a");
+                linkedList.add("b");
+                linkedList.add("c");
+                linkedList.add("d");
+                System.out.println("For Each");
+                for (String string : linkedList) {
+                    System.out.println("Elements in the LL are "+ string);
+                }
+                System.out.println("-----------------------------------------------------");
+            }/*
+             * Iterate using While
+             */
+            public void iterateUsingWhile(){
+                LinkedList< String> linkedList= new LinkedList<String>();
+                linkedList.add("a");
+                linkedList.add("b");
+                linkedList.add("c");
+                linkedList.add("d");
+                int number=0;
+                System.out.println("While");
+                while(linkedList.size()>number){
+                    System.out.println("Elements in the LL are "+ linkedList.get(number));
+                    number++;
+                }
+                System.out.println("-----------------------------------------------------");
+            }/*
+             * Iterate using Iterator
+             */
+            public void iterateUsingIterator(){
+                LinkedList< String> linkedList= new LinkedList<String>();
+                linkedList.add("a");
+                linkedList.add("b");
+                linkedList.add("c");
+                linkedList.add("d");
+                Iterator<String> iterator = linkedList.iterator();
+                System.out.println("Iterator");
+                while(iterator.hasNext()){
+                    System.out.println("Elements in the LL are "+ iterator.next());
+                }
+                System.out.println("-----------------------------------------------------");
+            }
+    
+    
+            public static void main(String[] args) {
+                LinkedListExample linkedListExample = new LinkedListExample();
+                linkedListExample.linkedListOperationsExample();
+                linkedListExample.iterateLinkedListWithSimpleFor();
+                linkedListExample.iterationWithAdvancedFor();
+                linkedListExample.iterateUsingWhile();
+                linkedListExample.iterateUsingIterator();
+            }}
+   --------------------------------------------------------------------------------------------------------------------------------  
+ (2)   Set:
+    
+  1, Hashset:
+    
+    import java.util.HashSet;
+import java.util.Iterator;
 
+public  class HashSetExample {
+    /**
+     * Set(I)-> HashSet (C) and LinkedHashSet(C) are implementations
+     * Set(I) -> SortedSet(Child Interface)->NavigableSet(I)=> TreeSet(C) is the implementation
+     * Important points to remember:
+     * 1. To store group of individual objects.
+     * 2. Duplicates not allowed
+     * 3.Insertion order will not be maintained
+     * 4.Set(I) doesn't have any new methods other than given in Collection(I).
+     * 5. DS for HashSet is Hash table
+     * 6. If we add duplicate value to HashSet, simply it will return false to the
+     * add() and it won't throw any error or exception.
+     * 7. We can insert null values
+     * 8. Heterogeneous values can be added.
+     * 9. Implements Serializable and Cloneable?-> Yes
+     * 10. Data are stored based on hashcode, so search is very effective.
+     * 11. Fill Ratio or Load factor:0.75 or 75%
+     * 12.Default capacity-16
+     */
+    /*
+     * Number Constructors available in HashSet=4
+     * 1. HashSet hs= new HashSet();// size-16 and fill ratio is 0.75
+     * 2. HashSet hs= new HashSet(int initialSize);size as declared and fill ratio is 0.75(default)
+     * 3. HashSet hs= new HashSet(int initialSize, float fillRatio);//size and fill ratio can be declared
+     * 4. HashSet hs= new HashSet(Collection c);// creates a HashSet for any given Collection (Acts as interconversion)
+     */
+    public void basicExamplesHashSet() {
+        HashSet<String> hashSet = new HashSet<String>();
+        hashSet.add("A");
+        hashSet.add("D");
+        hashSet.add("E");
+        hashSet.add("F");
+        hashSet.add("A"); // the return type of add() is boolean. Since A is already there it will return false and wont add
+        hashSet.add(null);
+        //We have no control on insertion order
+        System.out.println("Contents of the HashSet :" + hashSet);
+    }
+    /*
+     * Iterate using Iterator
+     */
+    public void iterateUsingIterator() {
+        HashSet<String> hashSet = new HashSet<String>();
+        hashSet.add("A");
+        hashSet.add("D");
+        hashSet.add("E");
+        hashSet.add("F");
+        hashSet.add("A");
 
+        Iterator<String> iterator = hashSet.iterator();
+        while (iterator.hasNext()) {
+    
+            System.out.println("Elements of HashSet :" + iterator.next());
+        }
+    }
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        HashSetExample hashSetExample = new HashSetExample();
+        hashSetExample.basicExamplesHashSet();
+        hashSetExample.iterateUsingIterator();
+    }}
+--------------------------------------------------------------------------------------------------------------------------------    
+2, LinkedHashSet:
+    
+    import java.util.LinkedHashSet;
 
+public class LinkedHashSetExample {
+    /**
+     * LinkedHashSet->Child class of HashSet
+     * DS-> Hash table + Linked List
+     * Insertion order is preserved
+     * Duplicates not allowed
+     */
+    public void linkedHashSetExample(){
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        linkedHashSet.add(1);
+        linkedHashSet.add("A");
+        linkedHashSet.add("B");
+        linkedHashSet.add("C");
+        linkedHashSet.add("10");
+        linkedHashSet.remove("10");
+        System.out.println("Insertion Order preserved Linked Hash Set :"+ linkedHashSet);
+    }
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        LinkedHashSetExample example= new LinkedHashSetExample();
+        example.linkedHashSetExample();
+    }}
+--------------------------------------------------------------------------------------------------------------------------------
+3, TreeSet  
+  import java.util.Iterator;
+import java.util.TreeSet;
 
+public class treeSetExample {
 
+    public static void treesetExample() {
+        //Creating object
+        TreeSet<Integer> treeSet = new TreeSet<Integer>();
+        treeSet.add(10);
+        treeSet.add(1);
+        treeSet.add(2);
+        treeSet.add(9);
+        treeSet.add(7);
+        treeSet.add(3);
+        System.out.println(treeSet);
+        System.out.println("Elements are sorted on ascending order :" + treeSet);
+        //first()
+        System.out.println("First element :" + treeSet.first());//first letter print pannum
+        //last()
+        System.out.println("Last element :" + treeSet.last());//last letter print pannum
+        //headSet()
+        System.out.println("Values lesser than given value" + treeSet.headSet(3));//etha value nama kudukuromo atha value kella irukuratha mattum tha print pannum then aha num varathu
+        //tailSet()
+        System.out.println("Values equal to and higher than given value"+treeSet.tailSet(9));//entha range solluromo athu ku mela iruka value print pannum na soolura num sethu print pannum
+        //subSet()
+        System.out.println("Subset values :"+treeSet.subSet(2, 9));//etha range solluromo ethu kula iruka value print pnnum and last nama kudutha value ya print pannathu
+        //comparator()
+        System.out.println("Comparator returns null if the sorting is default natural order :"+ treeSet.comparator());
+        //Adding null to a non empty tree set causes null pointer excpetion
+        //treeSet.add(null);
+        /*null can be easily added if the tree set is empty. If there are any elements present, the
+         * comparator will check for the sorting order between the previosly added element and
+         * the null. Since it compares null with the objects exisiting we are getting NPE.
+         * Same is the case, if we add null first and add other elements, NPE will happen.
+         */
+        System.out.println("Higher: "+treeSet.higher(3));//etha value kudukuromo atha vda periya value sollum
+        System.out.println("Higher: "+treeSet.lower(3));//etha value kudukuromo atha vda sena value sollum
+        System.out.println("Poll last; "+treeSet.pollFirst());//first value
+        System.out.println("Poll last; "+treeSet.pollLast());//last value
+        System.out.println("After polling : "+treeSet);//first value and last value remove pannu after irukuratha print pannum
+        System.out.println("Deserding order: "+treeSet.descendingSet());
+        //iterate
+        System.out.println("Ascending order");
+        Iterator<Integer> iterator = treeSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println("Descending order");
+        Iterator<Integer> descIterator = treeSet.descendingIterator();
+        while (descIterator.hasNext()){
+            System.out.println(descIterator.next());
+        }
+    }
+    public static void main(String[] args) {
+        treeSetExample.treesetExample();
+    }}
+--------------------------------------------------------------------------------------------------------------------------------   
+It is not collection part.
+1,   Map:
+ 1,     HashMap:
+    
+    import java.util.HashMap;
+    import java.util.Map;
+public class HashMapExample {
+    public static void main(String[] args) {
+        HashMap<Integer,String> employeeMap = new HashMap<Integer,String>();
+        //insert an element PUT method use
+        employeeMap.put(1,"agni");
+        employeeMap.put(2,"Riya");
+        employeeMap.put(3,"Arya");
+        employeeMap.put(4,"Mani");
+        employeeMap.put(5,"Duck");
+        System.out.println("employeeMap " +employeeMap);
+        //to Make a copy of the map contain
+        Map<Integer,String> duplicateMap = new HashMap<Integer,String>();
+        duplicateMap.putAll(employeeMap);
+        System.out.println("duplicateMap "+duplicateMap);
+        //Clear to delete the map content
+        duplicateMap.clear();
+        System.out.println(duplicateMap);
+        //To check the key is present or not in map
+        System.out.println("Does this ma has key 1? "+employeeMap.containsKey(1));
+        //To check the value is present or not in map
+        System.out.println("Does this ma has value Duck? "+employeeMap.containsValue("Duck"));
+        //clone the map
+        System.out.println("clone the map "+employeeMap.clone());
+        //check if the map is empty or not
+        System.out.println("Is empty "+employeeMap.isEmpty());
+        //fetch the set of key in the ( note : here it's not list of keys,it's set of keys.
+        //Because List will allow duplicate but set won't. keys should be Unique.
+        System.out.println("Key set "+employeeMap.keySet());
+        //fatch a value
+        System.out.println(employeeMap.get(1));
+        //fatch all value
+        System.out.println("All values "+employeeMap.values());
+        //entry set
+        System.out.println(employeeMap.entrySet());
+    }
+}
+ --------------------------------------------------------------------------------------------------------------------------------
+2,  HashLinkedMap  
+    
+    import java.util.HashMap;
+    import java.util.LinkedHashMap;
 
+public class LinkedHashMapExample {
+    public static void main(String[] args) {
+        LinkedHashMap<String,String> heros = new LinkedHashMap<String,String>();
+        //Linked hash map is like as Hashmap methods every thing should be same
+        //only difference LinkedHashMap maintained the preserved order.
+        heros.put("karthick","mani");
+        heros.put("palani","prabha");
+        heros.put("sethu","priya");
+        System.out.println(heros);
+        System.out.println("**This the difference **");
+        HashMap<String,String> heros1 = new HashMap<String,String>();
+        heros1.put("karthick","mani");
+        heros1.put("palani","prabha");
+        heros1.put("sethu","priya");
+        heros1.put("tamil","gopi");
+        System.out.println(heros1);
+    }}
+--------------------------------------------------------------------------------------------------------------------------------
+3,    TreeMap.
+    
+    import java.util.TreeMap;
 
-
-
+public class TreeMapExample {
+    public static void main(String[] args) {
+        //null insertion not main
+        TreeMap<String,String> placesInTrichy = new TreeMap<String,String>();
+        placesInTrichy.put("chennai","mathurai");
+        placesInTrichy.put("mathurai","mathurai");
+        placesInTrichy.put("thiruthani","mathurai");
+        placesInTrichy.put("thirupathi","mathurai");
+        System.out.println(placesInTrichy);
+    }}
+----------------------------------------------------------------------------------------------------------------------------------
 
 
 
