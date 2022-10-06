@@ -641,6 +641,243 @@ public class SampleException {
             System.out.println("array index out of bounds");
         }}}
 -------------------------------------------------------------------------------------------------------------------------
+Exception Handling methods.(try,catch,finally,throw,throws,)
+
+1,Try. (Used to specify a block where we should place exception code.)
+
+*NestedTry
+public class NestedTry{
+    public static void main(String[] args) {
+
+        try{
+            try{
+                int num = Integer.parseInt("karthick");
+                System.out.println(num);
+            }catch (NumberFormatException e){
+                System.out.println("Number Format exception");
+            } try{
+                int a []= new int [6];
+                a[7]=9;
+            }catch (Exception e){
+                System.out.println("Handled");
+            }
+            System.out.println("other Statement");
+        }
+        catch(Exception e){
+            System.out.println("handing and recovered");
+        } } }
+ -------------------------------------------------------------------------------------------------------------------------      
+2,   catch. (Used to handling the exception.)
+
+*OneTryBlockMultipleCatch
+public class OneTryBlockMultipleCatch {
+    public static void main(String[] args) {
+        try{
+            int a []= new int [5];
+            a[7]=9;
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("array index out of bounds");//This catch block handling the exception that why another catch block not executed
+        }catch (Exception e){
+            System.out.println("It is not execute");
+        }
+        System.out.println("other exception");
+    }}
+
+public class Finally {
+    public static void main(String[] args) {
+        try {
+            int num = Integer.parseInt("karthick");
+            System.out.println(num);
+        }
+        finally {
+            System.out.println("Finally is always executed");
+        }}}
+-------------------------------------------------------------------------------------------------------------------------
+3,   Finally. (Used to execute the important code of the program.)
+* Finally
+public class Finally {
+    public static void main(String[] args) {
+        try {
+            int num = Integer.parseInt("karthick");
+            System.out.println(num);
+        }
+        finally {
+            System.out.println("Finally is always executed");
+        }}}
+-------------------------------------------------------------------------------------------------------------------------
+4,   Throw.   (Used to throw an exception.) (method la tha exception throw pannum)
+
+* Throw
+public class ThrowException {
+    static void avg(){
+        try{
+            throw new ArithmeticException("demo");
+        }catch (ArithmeticException e){
+            System.out.println("Exception caught");
+        }
+    }
+    public static void main(String[] args) {
+        avg();
+    }}
+-------------------------------------------------------------------------------------------------------------------------
+5,   Throws.   (Used to declare exceptions.)(method la tha exception throw pannum)
+* Throws
+public class ThrowException {
+  /*  static void avg(){
+        try{
+            throw new ArithmeticException("demo");
+        }catch (ArithmeticException e){
+            System.out.println("Exception caught");
+        }
+    }
+    public static void main(String[] args) {
+        avg();
+    }*///Like as throw but lit bit difference in code
+  static void avg() throws ArithmeticException{
+      System.out.println("inside avg function");
+      throw new ArithmeticException("demo");
+  }
+    public static void main(String[] args) {
+        try{
+            avg();
+        }finally {
+            System.out.println("caught");
+        }}}
+-------------------------------------------------------------------------------------------------------------------------
+* User define Exeption.(User can also create exception the user defind exception)
+
+public class SampleUserdefine {
+    //Throw
+
+    public static void main(String[] args) {
+        try{
+            throw new Myexception(5);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+}
+class Myexception extends Exception{
+    int a;
+    Myexception(int b){
+        a=b;
+    }
+    public String toString(){
+        return ("Exception number = "+a);
+    }}
+-------------------------------------------------------------------------------------------------------------------------
+* Custom Exception.
+import com.sun.security.jgss.GSSUtil;
+import java.util.Scanner;
+public class SampleCustom {
+     static void validateInput(int number) throws InvalidInputException{
+        if (number > 100){
+            throw new InvalidInputException("Exception");
+        }
+        System.out.println("Valid Input");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number less than 100 : ");
+        int number = scanner.nextInt();
+        try{
+            validateInput(number);
+        }catch (InvalidInputException e){
+            System.out.println("caught Exception - Input is greater than 100");
+        }
+
+    }
+}
+class InvalidInputException extends Exception{
+    InvalidInputException(String exceptionText){
+        super(exceptionText);
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------
+* SimpleDateFormat
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+public class SampleDateFormat {
+    static void convertDateFormate (String inputDate){
+       try{
+           SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+           Date date = sdf.parse(inputDate);
+           SimpleDateFormat outputsdf = new SimpleDateFormat("yyyy-mm-dd");
+           String outputDate = outputsdf.format(date);
+           System.out.println("After changing date format to yyyy/mm/dd : "+outputDate);
+       } catch (java.text.ParseException e){
+           System.out.println("Some error Occure while converting date formats. Exception is "+e);
+       }
+       }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter date in dd/mm/yyyy format: ");
+        String inputDate = scanner.nextLine();
+        convertDateFormate(inputDate);
+    }}
+-------------------------------------------------------------------------------------------------------------------------
+* TryCatchFinaly
+
+public class TryCatchFinaly {
+
+    public static void main(String[] args) {
+        try {
+            System.out.println("Inside try block");
+           throw new Exception();
+        }catch (Exception e){
+           System.out.println("Inside Catch block");
+        }finally {
+            System.out.println("Inside finally block");
+        }}
+-------------------------------------------------------------------------------------------------------------------------    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
